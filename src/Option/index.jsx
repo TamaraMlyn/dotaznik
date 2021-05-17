@@ -5,7 +5,7 @@ import './style.css';
 const Option = ({ type, text, onSelected }) => {
   const handleClick = () => {
     console.log('spíše souhlasím');
-    onSelected();
+    onSelected(type);
   };
 
   return (

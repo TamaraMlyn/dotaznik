@@ -4,18 +4,15 @@ import Option from '../Option/index';
 import './style.css';
 
 const Question = ({ text }) => {
-  const [answered, setAnswered] = useState(false);
+  const [answer, setAnswer] = useState('symbolQuestion');
 
-  const handleSelect = () => {
-    setAnswered(true);
+  const handleSelect = (iconType) => {
+    setAnswer(iconType);
   };
 
   return (
     <div className="question">
-      <QuestionBody
-        iconType={answered === false ? 'symbolQuestion' : 'symbolTick'}
-        text={text}
-      />
+      <QuestionBody iconType={answer} text={text} />
       <div className="question__options">
         <Option
           onSelected={handleSelect}
